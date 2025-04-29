@@ -7,29 +7,19 @@ pipeline {
     }
 
     stages {
-      stage('Ritvik') {
-            steps {
-                echo 'Hello Beta'
-            }
-        }
-        stage('Compile') {
+        stage('Compileilation') {
             steps {
                 sh 'mvn compile'
             }
         }
-        stage('Test') {
+        stage('Testing') {
             steps {
                 sh 'mvn test'
             }
         }
-        stage('Package') {
+        stage('Packages') {
             steps {
                 sh 'mvn package'
-            }
-        }
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
             }
         }
     }
