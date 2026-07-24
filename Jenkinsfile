@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven3.6'
+        maven 'maven3.9'
         jdk 'jdk17'
     }
 
@@ -12,11 +12,13 @@ pipeline {
                 sh 'mvn compile'
             }
         }
+
         stage('Test') {
             steps {
                 sh 'mvn test'
             }
         }
+
         stage('Package') {
             steps {
                 sh 'mvn package'
